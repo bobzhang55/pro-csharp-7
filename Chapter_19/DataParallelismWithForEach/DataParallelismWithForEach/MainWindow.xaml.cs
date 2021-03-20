@@ -73,19 +73,19 @@ namespace DataParallelismWithForEach
 
                             // We need to ensure that the secondary threads access controls
                             // created on primary thread in a safe manner.
-                            this.Dispatcher.Invoke((Action) delegate
-                            {
-                                this.Title =
-                                    $"Processing {filename} on thread {Thread.CurrentThread.ManagedThreadId}";
-                            });
+                            this.Dispatcher.Invoke((Action)delegate
+                           {
+                               this.Title =
+                                   $"Processing {filename} on thread {Thread.CurrentThread.ManagedThreadId}";
+                           });
                         }
                     }
                 );
-                this.Dispatcher.Invoke((Action) delegate { this.Title = "Done!"; });
+                this.Dispatcher.Invoke((Action)delegate { this.Title = "Done!"; });
             }
             catch (OperationCanceledException ex)
             {
-                this.Dispatcher.Invoke((Action) delegate { this.Title = ex.Message; });
+                this.Dispatcher.Invoke((Action)delegate { this.Title = ex.Message; });
             }
         }
     }
