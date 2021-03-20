@@ -22,7 +22,7 @@ namespace DataParallelismWithForEach
     /// </summary>
     public partial class MainWindow : Window
     {
-        // New Window level variable.
+        // New Window level variable. --- comment by Bob Zhang -03/20/2021
         private CancellationTokenSource cancelToken = new CancellationTokenSource();
 
         public MainWindow()
